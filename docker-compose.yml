@@ -3,7 +3,7 @@ services:
   redis-server: # hostname to use in other places
     image: 'redis'
   node-app:
-    restart: always # restart if failed for any reasons
+    restart: always # restart if failed for any reasons e.g. process.exit(0)
     build: . # find dockerfile in context: . and build image from it
     ports:
       - "4001:8081"   # port on your local_machine:port inside the container
