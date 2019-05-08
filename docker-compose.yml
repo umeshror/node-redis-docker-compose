@@ -1,10 +1,10 @@
-version: "3" # version of docker compose to user
+version: "3" # version of docker compose to use
 services:
   redis-server:
     image: 'redis'
   node-app:
     restart: always # restart if failed for any reasons
-    build: .
+    build: . # find dockerfile in context: . and build image from it
     ports:
-      - "4001:8081"
+      - "4001:8081"   # port on your local_machine:port inside the container
 
